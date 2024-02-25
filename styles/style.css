@@ -1,0 +1,447 @@
+
+*{
+    box-sizing: border-box;
+}
+html,
+body{
+    margin:0;
+    padding:0;
+
+}
+html{
+    height:100%;
+    width:100%;
+}
+body  {
+    font-family: "Catamaran", sans-serif;
+    font-style: normal;
+    font-size:18px;
+    color: #373737;
+    line-height: 1.5;
+}
+img{
+    max-width:100%;
+}
+.container{
+max-width: 1100px;
+margin:0 auto;
+/*padding: 0 10px;*/
+}
+@media screen and(max-width:1140px){
+    .container{
+        max-width: auto;
+        width: 100%;
+        padding:0 20px;
+    }
+}
+/*typografia*/
+h1,
+h2,
+h3 {
+    margin:0;
+}
+
+h2, 
+h3{
+    font-weight: 100;
+    margin:0 0 20px 10px;
+    line-height: 1;
+}
+h2
+{
+    font-size:70px;
+}
+h3
+{
+    font-size:30px;
+}
+p{
+    margin:0 0 10px;
+}
+/*header and menu*/
+.header{
+    padding:30px 20px 0;
+   /* display: flex;
+    justify-content: space-between;*/
+}
+nav{
+    text-align:right;
+}
+.menu {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+.menu li{
+    display: inline-block;
+
+}
+.menu a{
+    padding:10px 15px;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
+.menu a:hover{
+    border-bottom: 3px solid #bf0034;
+}
+.mobile_menu_icon{
+    display:none;
+}
+@media screen and(max-width: 768px){
+    .menu{
+        display: none;
+    }
+    .menu li{
+        display:block;
+    }
+    .menu a{
+        display:inline-block;
+    }
+    .mobile_menu_icon{
+        display: inline-block;
+    }
+    .mobile_menu_icon:hover{
+        cursor:pointer;
+    }
+    /*ukrywany ikonę x na start*/
+    .icon-close{
+        display:none;
+    }
+    /*zmiana ikonya menu na x po kliknięciu */
+
+    .mobile_menu_icon.opened .icon-menu{
+        display:none;
+    }
+    .mobile_menu_icon.opened .icon-close{
+        display:block;
+    }
+    .menu.opened{
+        display:block;
+        position:absolute;
+        top:60px;
+        right:20px;
+        text-align: right;
+    }
+}
+#hero{
+    background: url("../images/images/hero-background-2.jpg");
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+    height: 100vh;
+}
+/*.hero_logo{
+    color:#bf0034;
+
+}*/
+.hero_title{
+    font-weight: 900;
+    font-size: 120px;
+    line-height: 1;
+    margin:100px 0 40 px;
+    color:#fff;
+}
+.hero_content p{
+    color:#fff;
+    margin-bottom: 20px;
+}
+
+.hero_button{
+    color:#fff;
+    border: 3px solid #bf0034;
+    padding:8px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 768px){
+    .hero_content{
+        font-size:15px;
+        padding:0 20px;   
+     }
+    .hero_title{
+        font-size:20px;
+        font-weight: 40px;
+        line-height: 1; 
+        margin: 10;
+     }
+     .hero_button{
+        border:3px solid #bf0034;
+        font-size: 10px;
+        padding: 4 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+    
+     }
+     .hero_logo{
+        display: none;
+     }
+}
+/*sections*/
+section{
+    padding: 100px;
+}
+.section_violet{
+background-color: #4f247c;
+color:#fff;
+}
+.section_pink{
+    background-color: #bf0034;
+    color:#fff;
+}
+.column_container{
+    display:flex;
+    justify-content: space-between;
+    
+}
+.column .columns_2_container{
+    flex-direction: row;
+    width: 45%;
+}
+.columns_4_container{
+    text-align: center;
+    flex-basis: 25%;
+}
+.columns_3_container{
+    flex-wrap: wrap;
+    row-gap: 25px;
+
+    
+}
+.columns_3_container .column{
+    width:32%;
+}
+
+@media screen and (max-width:769px){
+    .columns_3_container.column{
+       flex-direction: row;
+    }
+
+    .columns_3_container{
+    width:49%
+
+    }
+   
+}
+
+@media screen and (max-width:768px){
+    .column_container{
+        flex-direction: column;
+    }
+    .column_3_container{
+        flex-direction: row;
+    }
+    .columns_3_container.column{
+        width: 100%;
+}
+.columns_4_container{
+    row-gap: 20px;
+}
+}
+/* sekcja about*/
+#about .columns_2_container {
+    padding-left: 30px;
+
+}
+.about_section{
+    padding: 120px 0;
+}
+.about_image {
+    text-align: center;
+    position: relative;
+    max-height: 550px;
+}
+.about_image img{
+    max-height: 550px;
+}
+.about_image::before {
+    content: "";
+    border:20px solid #4f247c;
+    position:absolute;
+    top:-30px;
+    left:0px;
+    width: 220px;
+    height: 330px;
+    box-sizing: border-box;
+    z-index: -2;
+}
+.about_image::after {
+    content: "";
+    background-color: #bf0034;
+    position:absolute;
+    top: -10px;
+    right: -20px;
+    left: 20px;
+    width: 160x;
+    height: 330px;
+    box-sizing: border-box;
+    z-index: -1;
+}
+/*sekcja zainteresowania*/
+.interests_section {
+    margin: 0 0 5% 0;
+}
+.interests_section svg{
+    margin: 25px 0 0 0;
+    border:2px solid #bf0034;
+    border-radius:  100%;
+    padding: 25px;
+}
+.interest_name{
+    margin: 20px 0;
+}
+.interest_text{
+    padding: 0 10 px;
+    font: 14px;
+    margin: 25px;
+}
+
+.photo_title{
+    text-align: center;
+    color:#4f247c;
+}
+.photo_lead{
+    text-align: center;
+    max-width: 70%;
+    margin:0 auto;
+    margin-bottom: 40px;
+}
+.photos_section figure{
+    margin:0;
+}
+.photos_section img{
+    width:100%;
+    height: 240px;
+    object-fit: cover;
+}
+.photos_section figcaption{
+    font-size: 14 px;
+    margin-bottom: 0;
+    text-align: center;
+}
+/*sekcja z cytatem*/
+.quote_section{
+    padding:80px 0;
+    position:relative;
+    overflow:hidden;
+}
+.quote_section::after{
+    content: "";
+    background-color: #4f247c;
+    position: absolute;
+    right: -90px;
+    bottom:-75px;
+    width:350px;
+    height: 350px;
+    z-index: 1;
+    border-radius: 50%;
+}
+.quote_text{
+    text-align: right;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+.quote_author{
+    text-align: right;
+    font-size: 14px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+@media screen and (max-width: 768px){
+    .quote_text{
+        font-size:20px;
+        font-weight: 600;
+        padding:0 20px;   
+     }
+     .quote_author{
+        font-size: 10px;
+        padding: 0 20px;
+    
+     }
+}
+
+/*sekacja z formularzem*/
+.contact_title{
+    text-align: center;
+    margin: 30px 0 auto;
+}
+.contact_form{
+    width:50%;
+    margin: 0 auto; 
+}
+.contact_form label,
+.contact_form input,
+.contact_form textarea{
+    display:block;
+    width:100%;
+}
+.contact_form input,
+.contact_form textarea{
+    border: 3px solid #4f247c;
+    border-radius: 0;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+}
+.contact_form label {
+    padding-bottom: 5px;
+}
+.submit_button{
+    color:#fff;
+    background-color: #4f247c;
+    border:3 px solid #4f247c;
+    text-decoration: none;
+    padding:10px 40px;
+    margin: 30px auto 40px;
+    display: block;
+    font-size:20px;
+    text-transform: uppercase;
+}
+.submit_button:hover{
+    color: #4f247c;
+    background-color: #fff;
+}
+@media screen and (max-width:768px){
+    .contact_form{
+        width:80%;
+    }
+}
+/*style dla footera*/
+.footer{
+    padding: 40px 0;
+}
+.copyright,
+.social{
+    width: 49%;
+    display:inline-block
+}
+.social{
+    text-align: right;
+}
+.social a{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 10px;
+}
+/*zmiana koloru ikony odbywa się z poziomu html a nie css*/
+.copyright{
+    font-size: 14px;
+}
+/*stylowanie mobile urządzenie do szerokości 768px*/
+@media screen and (max-width:768px) {
+    .copyright,
+    .social{
+        width: 100%;
+        display: block;
+        text-align:center;
+    }
+    .social{
+        margin-top: 28px;;
+    }
+}
+
